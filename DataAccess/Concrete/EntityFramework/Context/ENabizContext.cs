@@ -13,7 +13,7 @@ namespace DataAccess.Concrete.EntityFramework.Context
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Server = (localdb)\MSSQLLocalDB; Database = ENabiz; Trusted_Connection = true");
+            optionsBuilder.UseSqlServer(@"Server = DESKTOP-4DC573S\SQLEXPRESS; Database = ENabiz10; Trusted_Connection = true");
         }
 
 

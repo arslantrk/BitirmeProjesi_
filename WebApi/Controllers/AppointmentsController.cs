@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Business.Abstract;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,6 +26,8 @@ namespace WebApi.Controllers
             var result = _appointmentService.GetList();
             if (result.Success)
             {
+                var result1 = JsonConvert.SerializeObject(result.Data);
+                var result2 = result;
                 return Ok(result);
             }
             return BadRequest(result);

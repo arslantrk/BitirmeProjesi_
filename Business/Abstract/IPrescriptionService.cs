@@ -1,5 +1,6 @@
 ﻿using Core.Utilities;
 using Entity.Concrete;
+using Entity.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,5 +13,6 @@ namespace Business.Abstract
     {
         IDataResult<Prescription> GetById(int id);
         IDataResult<List<Prescription>> GetList();
+        List<PrescriptionDetailDto> GetListWithDoctor();
     }
 }

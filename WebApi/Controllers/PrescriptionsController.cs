@@ -16,15 +16,28 @@ namespace WebApi.Controllers
         {
             _prescriptionService = prescriptionService;
         }
-        [HttpGet("getlist")]
-        public IActionResult GetList()
+        //[HttpGet("getlist")]
+        //public IActionResult GetList()
+        //{
+        //    var result = _prescriptionService.GetList();
+        //    if (result.Success)
+        //    {
+        //        return Ok(result);
+        //    }
+        //    return BadRequest(result);
+        //}
+        [HttpGet]
+        public IActionResult GetListWithDoctor()
         {
-            var result = _prescriptionService.GetList();
-            if (result.Success)
+            var result = _prescriptionService.GetListWithDoctor();
+            try
             {
                 return Ok(result);
             }
-            return BadRequest(result);
+            catch(Exception e)
+            {
+                return BadRequest(e);
+            }
         }
     }
 }

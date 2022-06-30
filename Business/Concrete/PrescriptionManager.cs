@@ -3,6 +3,7 @@ using Core.Aspects.Autofac.Caching;
 using Core.Utilities;
 using DataAccess.Abstract;
 using Entity.Concrete;
+using Entity.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,6 +28,11 @@ namespace Business.Concrete
         public IDataResult<List<Prescription>> GetList()
         {
             return new SuccessDataResult<List<Prescription>>(_prescriptionDal.GetList());
+        }
+
+        public List<PrescriptionDetailDto> GetListWithDoctor()
+        {
+            return new List<PrescriptionDetailDto>(_prescriptionDal.GetListWithDoctor());
         }
     }
 }
